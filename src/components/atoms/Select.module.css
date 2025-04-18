@@ -1,0 +1,37 @@
+.select {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  color: black;
+  box-shadow: 4px 4px 0 black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.select:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 black;
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.6);
+}
+
+.select:disabled {
+  background-color: #e0e0e0;
+  color: #777;
+  border: 3px solid #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.selectOption {
+  font-weight: normal;
+  background-color: #f9f9f9;
+}

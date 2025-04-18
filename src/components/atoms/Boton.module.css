@@ -1,0 +1,25 @@
+.boton {
+  padding: 12px 24px;
+  background-color: #ffcc00;
+  color: black;
+  border: 3px solid black;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.boton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 black;
+}
+
+.boton:disabled {
+  background-color: #e0e0e0;
+  color: #777;
+  border: 3px solid #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
