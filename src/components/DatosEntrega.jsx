@@ -1,28 +1,9 @@
 import Input from "./atoms/Input";
 import CampoFormulario from "./molecules/CampoFormulario";
 import Select from "./atoms/Select";
+import { validarCodigoPostal, validarTelefono } from "../utils/validaciones";
 
 function DatosEntrega({ formData, handleChange }) {
-  // Funciones de validación
-  const validarTelefono = (telefono) => {
-    if (!telefono) return "El teléfono es obligatorio";
-    const limpio = telefono.replace(/\s+/g, "");
-    const regex = /^\d{9}$/;
-    return regex.test(limpio)
-      ? ""
-      : "El teléfono debe tener 9 cifras numéricas";
-  };
-  const validarCodigoPostal = (cp) => {
-    if (!cp) return "El código postal es obligatorio";
-    const regex = /^\d{5}$/;
-    if (!regex.test(cp))
-      return "El código postal debe tener 5 cifras numéricas";
-    const numero = parseInt(cp, 10);
-    if (numero < 1000 || numero > 52999)
-      return "Código postal no válido en España";
-    return "";
-  };
-
   return (
     <>
       <CampoFormulario legend={"Dirección de envío"}>

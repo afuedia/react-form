@@ -1,37 +1,15 @@
 import { useState, useEffect } from "react";
 import Input from "./atoms/Input";
 import CampoFormulario from "./molecules/CampoFormulario";
+import {
+  validarNombre,
+  validarApellidos,
+  validarEmail,
+  validarContraseña,
+  validarContraseña2,
+} from "../utils/validaciones";
 
 function DatosPersonales({ formData, handleChange }) {
-  // Funciones de validación
-  const validarEmail = (email) => {
-    if (!email) return "El correo electrónico es obligatorio";
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email) ? "" : "Correo electrónico inválido";
-  };
-
-  const validarContraseña = (password) => {
-    if (!password) return "La contraseña es obligatoria";
-    return password.length >= 8
-      ? ""
-      : "La contraseña debe tener al menos 8 caracteres";
-  };
-
-  const validarContraseña2 = (password2) => {
-    if (!password2) return "Por favor, repite la contraseña";
-    return password2 === formData.contraseña
-      ? ""
-      : "Las contraseñas no coinciden";
-  };
-
-  const validarNombre = (nombre) => {
-    return nombre.trim() === "" ? "El nombre es obligatorio" : "";
-  };
-
-  const validarApellidos = (apellidos) => {
-    return apellidos.trim() === "" ? "Los apellidos son obligatorios" : "";
-  };
-
   return (
     <CampoFormulario legend={"Datos Personales"}>
       <Input

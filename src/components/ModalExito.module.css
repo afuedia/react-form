@@ -1,0 +1,46 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #f9f9f9;
+  color: #111;
+  padding: 2rem;
+  border: 4px solid #000;
+  border-radius: 0.5rem;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 6px 6px 0 #000;
+  font-family: "Arial Black", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal:hover {
+  box-shadow: 12px 12px 0 #000;
+}
+
+.botonCerrar {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 3px solid #000;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.botonCerrar:hover {
+  transform: scale(1.05);
+  background-color: #ffe066;
+}
