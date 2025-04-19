@@ -2,11 +2,11 @@ import styles from "./ModalExito.module.css";
 
 function ModalExito({ onClose }) {
   return (
-    <div style={styles.overlay}>
-      <div style={styles.modal}>
+    <div className={styles.overlay}>
+      <div className={styles.modal}>
         <h2>¡Formulario enviado con éxito! 🎉</h2>
         <p>Gracias por completar el registro.</p>
-        <button onClick={onClose} style={styles.botonCerrar}>
+        <button onClick={onClose} className={styles.botonCerrar}>
           Cerrar
         </button>
       </div>

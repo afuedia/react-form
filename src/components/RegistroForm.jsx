@@ -131,7 +131,6 @@ function RegistroForm() {
   return (
     <div>
       {enviado && <ModalExito onClose={() => setEnviado(false)} />}
-      <BarraProgreso progreso={progreso} />
 
       {step === 1 && (
         <DatosPersonales formData={formData} handleChange={handleChange} />
@@ -154,8 +153,7 @@ function RegistroForm() {
           />
         </div>
       )}
-
-      <NavegadorVisual step={step} setStep={setStep} />
+      <BarraProgreso progreso={progreso} />
 
       <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
         {step > 1 && <BotonPaso onClick={prevStep}>Anterior</BotonPaso>}

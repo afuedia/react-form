@@ -1,17 +1,22 @@
 .inputWrapper {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
 
 .label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: black;
 }
 
+.inlineLabel {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
 .inputField {
-  padding: 10px;
+  padding: 0.5rem;
   border: 3px solid black;
   border-radius: 4px;
   font-size: 1rem;
@@ -35,4 +40,26 @@
   color: red;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+/* Estilos especiales para radio y checkbox */
+.checkInput {
+  width: auto; /* Radio y checkbox suelen ser más pequeños, ajustamos el tamaño */
+  height: auto;
+  margin: 0;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  input {
+    border: none;
+    box-shadow: none;
+  }
+  input:focus {
+    border: none;
+    box-shadow: none;
+  }
 }

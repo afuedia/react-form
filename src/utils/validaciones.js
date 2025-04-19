@@ -46,7 +46,7 @@ export const validarCodigoPostal = (cp) => {
 };
 
 // Funcion para validad número de tarjeta
-const validarTarjeta = (numero) => {
+export const validarTarjeta = (numero) => {
   if (!numero) return "El número de tarjeta es obligatorio";
   const limpio = numero.replace(/\s+/g, "");
   if (!/^\d{13,19}$/.test(limpio)) {

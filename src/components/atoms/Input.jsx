@@ -35,7 +35,7 @@ function Input({
   };
 
   return (
-    <div className={styles.inputWrapper}>
+    <div className={`${styles.inputWrapper} ${isCheck ? styles.inline : ""}`}>
       <label
         htmlFor={id}
         className={styles.label}
