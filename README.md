@@ -1,65 +1,76 @@
+# 🧾 Formulario Multistep en React
 
-# Documentación del Formulario de Registro de Usuarios
+Este proyecto fue desarrollado como tarea del curso **“Formularios en la construcción de páginas web”**, donde se nos propuso desarrollar un formulario.
 
-## 1. Resumen del Proyecto
-Formulario multi-página para registro de usuarios en un sitio de comercio electrónico. Incluye validaciones, seguridad con reCAPTCHA, barra de progreso y controles completos de usuario.
+---
 
-## 2. Estructura del Formulario
+## 🎯 Objetivos del proyecto
 
-- **Paso 1: Datos Personales**
-  - Nombre
-  - Apellidos
-  - Email
-  - Contraseña + Confirmación
+- Crear un formulario de registro dividido en pasos (multistep).
+- Incluir validación personalizada por campo.
+- Mostrar una barra de progreso según los campos completados.
+- Confirmar el envío con una ventana modal de éxito.
+- Integrar reCAPTCHA de Google para evitar envíos automatizados.
+- Aplicar diseño modular siguiendo principios de atomic design.
 
-- **Paso 2: Datos de Envío**
-  - Calle, Municipio, Provincia
-  - Código Postal
-  - Teléfono
-  - País
-  - Horario de entrega (radio)
+---
 
-- **Paso 3: Pago**
-  - Método de pago
-  - Tarjeta de crédito (si aplica)
-  - Gastos de envío (visualizados según método, si se desea)
+## 🧱 Arquitectura del proyecto
 
-- **Paso 4: Suscripción y Control**
-  - Preferencias de boletín y ofertas
-  - Aceptar Términos
-  - reCAPTCHA
-  - Botones: Enviar / Borrar
+El formulario se divide en **componentes reutilizables y bien estructurados** siguiendo una jerarquía clara:
 
-## 3. Validaciones Incluidas
-- Todos los campos son obligatorios.
-- Email con formato correcto.
-- Contraseña debe coincidir.
-- Confirmación de reCAPTCHA antes de enviar.
-- Validación paso a paso antes de avanzar.
+- **Átomos** (`atoms/`): componentes simples como `Input` o `BotonPaso`.
+- **Moléculas** (`molecules/`): conjuntos lógicos de campos, como `CampoFormulario`.
+- **Organismos**: pasos del formulario como `DatosPersonales`, `DatosEntrega`, `DatosPago` y `SuscripcionControles`.
+- **Layout**: barra de progreso, modal de éxito, navegación visual, etc.
+- **Lógica centralizada**:
+  - Las funciones de **validación de campos** se han extraído y organizadas en un archivo `validators.js` dentro de `utils/`, facilitando la reutilización y mantenimiento.
+  - La gestión de estado está centralizada en el componente `RegistroForm`, que controla los pasos, la validación de progreso y la lógica del envío.
 
-## 4. Componentes Personalizados
-- `DatosPersonales`, `DatosEntrega`, `DatosPago`, `SuscripcionControles`
-- `BarraProgreso`: representa avance visual
-- `BotonPaso`: botones reutilizables
-- `NavegadorVisual`: navegación rápida entre pasos
-- `ModalExito`: modal de confirmación al enviar
+---
 
-## 5. Seguridad
-- Integración con Google reCAPTCHA v2
-- Solo permite enviar si el usuario es validado como humano
+## 🧪 Validación
 
-## 6. Estilo y UX
-- Diseño adaptado y limpio
-- Validaciones en tiempo real
-- División en pasos para facilitar la entrada de datos
+Cada input incluye una función de validación personalizada, que muestra mensajes en tiempo real cuando el usuario interactúa con el campo. Se validan:
 
-## 7. Pruebas Realizadas
-- Probado en navegadores: Chrome, Firefox, Safari
-- Responsive en móvil y escritorio
-- Comportamientos: avance, borrado, reenvío
+- Campos obligatorios.
+- Coincidencia de contraseñas.
+- Formato del correo electrónico.
+- Longitud mínima de la contraseña.
+- Campos específicos para dirección y método de pago.
 
-## 8. Posibles Mejoras Futuras
-- Envío a backend real / persistencia en base de datos
-- Guardar progreso parcial en `localStorage`
-- Verificador de fortaleza de contraseña
-- Soporte para varios métodos de pago
+---
+
+## 🖼️ Modal de Éxito
+
+Al enviar el formulario correctamente, se muestra un **modal con estilo neobrutalista** confirmando el registro, diseñado con CSS modular.
+
+---
+
+## 🧩 Tecnologías usadas
+
+- ⚛️ React
+- 💅 CSS Modules
+- 📦 Atomic Design
+- 🔐 Google reCAPTCHA v2
+- 🧪 Validación personalizada con JS
+- 🎨 Neobrutalismo en estilos visuales
+
+---
+
+## ✍️ Conclusiones
+
+Este proyecto me permitió practicar:
+
+- Composición de formularios complejos.
+- Separación de responsabilidades en componentes React.
+- Aplicación de patrones de diseño front-end.
+- Uso de `reCAPTCHA` y feedback visual al usuario.
+
+Es un punto de partida que puedo seguir mejorando y adaptando a proyectos reales.
+
+---
+
+## 👤 Autor
+
+**Antonio Fuentes**
